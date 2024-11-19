@@ -1,0 +1,138 @@
+---
+
+---
+
+---
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Well-Beaning - Flourish Together</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="src/styles/global.css">
+</head>
+
+<body>
+  <header class="navbar">
+    <nav>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#section2">Services</a></li>
+        <li><a href="#section3">Team</a></li>
+        <li><a href="#section4">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <section id="hero" class="hero-section section">
+      <div class="hero-content" data-aos="fade-up">
+        <h1>Well-Beaning</h1>
+        <h2>Grow self-care habits with like-minded friends</h2>
+        <div class="time-selection">
+          <div class="space-y-4">
+            <div style="margin-bottom: 1.5rem;">
+              <h2 style="font-size: 1.2rem; color: #666; margin-bottom: 1rem;">
+                Ideally, I would like to wake up and start my day at
+              </h2>
+              <select style="padding: 0.5rem; border: 2px solid #eee; border-radius: 8px;">
+                <option value="">Select a time</option>
+                <option value="05:00">05:00am</option>
+                <option value="05:30">05:30am</option>
+                <option value="06:00">06:00am</option>
+                <option value="06:30">06:30am</option>
+                <option value="07:00">07:00am</option>
+                <option value="07:30">07:30am</option>
+                <option value="08:00">08:00am</option>
+              </select>
+            </div>
+            <p style="font-weight: 600; margin-bottom: 1rem;">
+              Take 45 seconds designing your cornerstone habit once you wake up at <span
+                id="selectedTime">__:__</span>am
+            </p>
+            <button class="share-button" onclick="proceedToNextSection()">Cornerstone Habit?</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section2" class="section section-2">
+      <div data-aos="fade-up">
+        <h2>Corner Stone Habit - First Action After You Wake Up</h2>
+        <div class="section-2-content">
+          <div class="section-2-left">
+            <p style="font-weight: 600; margin-bottom: 1rem;">Once I wake up at <span id="selectedTime2">__:__</span>,
+              I'll Pick:</p>
+            <div class="checkbox-item">
+              <input type="radio" name="cornerstone" id="breath" onclick="validateTimeSelection(this)">
+              <label for="breath">Taking 3 Deep Breaths</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="radio" name="cornerstone" id="water" onclick="validateTimeSelection(this)">
+              <label for="water">Drinking a cup of water</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="radio" name="cornerstone" id="pushups" onclick="validateTimeSelection(this)">
+              <label for="pushups">Doing 10 Pushups</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="radio" name="cornerstone" id="custom" onclick="validateTimeSelection(this)">
+              <label for="custom">Other: </label>
+              <input type="text" 
+                     placeholder="Type your own habit" 
+                     style="width: auto; padding: 0.25rem 0.5rem; margin-left: 0.5rem;"
+                     onchange="updateCustomHabit(this)"
+                     onclick="validateTimeSelection(document.getElementById('custom'))">
+            </div>
+            <p style="font-weight: 600; margin-bottom: 1rem;">as my Corner Stone Habit</p>
+          </div>
+          <div class="section-2-right">
+            <div style="height: 100%; display: flex; justify-content: center; align-items: center; color: #666;">
+              Visualization or progress tracking could go here
+            </div>
+          </div>
+        </div>
+        <button class="share-button" style="margin-top: 2rem;" onclick="validateCornerstoneAndProceed()">What's
+          next?</button>
+      </div>
+    </section>
+
+    <section id="section3" class="section section-3">
+      <div class="container" data-aos="fade-up">
+        <h1>Find a Friend to Join You as Accountability Partner for 3 Days!</h1>
+        <input type="text" placeholder="potential partner's name">
+        <div class="card">
+          <p>
+            Hey <span id="selectedName">____</span>,<br><br>
+            I'm signing up for a challenge to build my self-care morning routine starting with
+            <span id="selectedHabit">____</span> at <span id="selectedTime3">____</span>.
+            I would like you to be my accountability partner and grow together. Will you be interested to join me? Let
+            me know and I'll send you the details.
+          </p>
+          <button class="share-button" onclick="copyMessageAndProceed()">Copy Message</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="section4" class="section section-4">
+      <div data-aos="fade-up">
+        <h1>Start your 3 day challenge!</h1>
+        <button class="share-button">I'm in!</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2024 Well-Beaning. All rights reserved.</p>
+  </footer>
+
+</body>
+
+</html>
+
